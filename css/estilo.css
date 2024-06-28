@@ -1,3 +1,12 @@
+:root {
+  --back-color: #0000ff;
+  --bottom-color: #7401f8;
+  --front-color: #ff0000;
+  --right-color: #545454;
+  --left-color: #fffb00;
+  --top-color: #00fd37;
+}
+
 *,
 ::after,
 ::before {
@@ -6,30 +15,30 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
   user-select: none;
 }
 
 /* Contenedor de la escena 3D */
 .scene {
-  width: 200px;
   height: 200px;
   perspective: 600px;
+  width: 200px;
 }
 
 /* Estilo para el cubo */
 .cube {
-  width: 100px;
+  cursor: grab;
   height: 100px;
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(0deg) rotateY(0deg);
   transition: transform 0.5s;
-  cursor: grab;
+  width: 100px;
 }
 
 /* Cambia el cursor cuando se está arrastrado */
@@ -38,17 +47,17 @@ body {
 }
 
 .face {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
   box-sizing: border-box;
-  text-align: center;
-  line-height: 100px;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
   color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  height: 100px;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+  width: 100px;
 }
 
 /* Transformaciones para posicionar cada cara del cubo */
@@ -69,4 +78,24 @@ body {
 }
 .bottom {
   transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* Colores de las cara del Cubo */
+.front {
+  background-color: var(--front-color);
+}
+.back {
+  background-color: var(--back-color);
+}
+.right {
+  background-color: var(--right-color);
+}
+.left {
+  background-color: var(--left-color);
+}
+.top {
+  background-color: var(--top-color);
+}
+.bottom {
+  background-color: var(--bottom-color);
 }
